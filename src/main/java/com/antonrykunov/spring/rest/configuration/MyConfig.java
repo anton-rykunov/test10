@@ -21,13 +21,13 @@ import java.util.Properties;
 @EnableTransactionManagement
 public class MyConfig {
 
-    @Bean
-    public ViewResolver viewResolver(){
-        InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
-        internalResourceViewResolver.setPrefix("/WEB-INF/view/");
-        internalResourceViewResolver.setSuffix(".jsp");
-        return viewResolver();
-    }
+//    @Bean
+//    public ViewResolver viewResolver() {
+//        InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
+//        internalResourceViewResolver.setPrefix("/WEB-INF/view/");
+//        internalResourceViewResolver.setSuffix(".jsp");
+//        return viewResolver();
+//    }
 
     @Bean
     public DataSource dateSource() {
@@ -58,7 +58,7 @@ public class MyConfig {
     }
 
     @Bean
-    public HibernateTransactionManager transactionManager(){
+    public HibernateTransactionManager transactionManager() {
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
         transactionManager.setSessionFactory(sessionFactory().getObject());
         return transactionManager;

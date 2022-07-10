@@ -17,9 +17,9 @@ public class MyRestController {
     EmployeeService employeeService;
 
     @GetMapping("/employees")
-    public String showAllEmployees() {
-//        List<Employee> allEmployees = employeeService.getAllEmployees();
-        return "allEmployees";
+    public List<Employee> showAllEmployees() {
+        List<Employee> allEmployees = employeeService.getAllEmployees();
+        return allEmployees;
     }
 
     @GetMapping("/employees/{id}")
